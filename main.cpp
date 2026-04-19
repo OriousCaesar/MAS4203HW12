@@ -23,7 +23,7 @@ int main(){
 void problemA(){
     int m,n;
     int x,y,z;
-    for(n = 0; n < 1000; n++){
+    for(n = 1; n < 1000; n++){
     for(m = n; m < 1000; m++){
         if(gcd(m,n) != 1) continue;
         x = m*m-n*n;
