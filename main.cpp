@@ -9,8 +9,18 @@ int gcd(int a, int b){
 int gcd(int a, int b, int c){
     return gcd(gcd(a,b),c);
 }
+void problemA();
+void problemB();
 
 int main(){
+    cout << "Primitive Pythagorean Triples: " << endl;
+    problemA();
+    cout << "Pythagorean Triples: " << endl;
+    problemB();
+    return 0;
+}
+
+void problemA(){
     int m,n;
     int x,y,z;
     for(n = 0; n < 1000; n++){
@@ -22,6 +32,27 @@ int main(){
         if(z > 50) continue;
         if(gcd(x,y,z) != 1) continue;
         cout << x << "^2 + " << y << "^2 = " << z << "^2" << endl;
+    }
+    }
+}
+void problemB(){
+    int m,n;
+    int x,y,z;
+    for(n = 1; n < 1000; n++){
+    for(m = n; m < 1000; m++){
+        if(gcd(m,n) != 1) continue;
+        x = m*m-n*n;
+        y = 2*m*n;
+        z = m*m + n*n;
+        if(gcd(x,y,z) != 1) continue;
+        if(z > 50) continue;
+        for(int k = 1; k < 20; k++){
+            int xk = k*x;
+            int yk = k*y;
+            int zk = k*z;
+            if(zk > 50) continue;
+            cout << xk << "^2 + " << yk << "^2 = " << zk << "^2" << endl;
+        }
     }
     }
 }
